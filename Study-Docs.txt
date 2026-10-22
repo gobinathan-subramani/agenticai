@@ -1,0 +1,11 @@
+uv init
+uv add langchain langchain-openai langchain-ollama python-dotenv black isort
+.\.venv\Scripts\Activate.ps1
+uv run python src\agenticai\__init__.py
+black .
+isort .
+git add .
+git commit -m "environment setup"
+git push
+git checkout -b project/hello-world
+git push --set-upstream origin project/hello-world
